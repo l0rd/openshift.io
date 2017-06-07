@@ -4,7 +4,7 @@ Here are some commonly asked questions.
 
 When I goto https://jenkins-<username>-jenkins.8a09.starter-us-east-2.openshiftapps.com I just get Application Not Available. 
 
-### How do I update my tenants ?
+### How do I update my tenant ?
 
 ### My tenant update does not work even
 
