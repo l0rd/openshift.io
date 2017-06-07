@@ -82,5 +82,5 @@ will run all test suite starting with `TestSuiteWorkItemLink` and within those, 
 
 ### How to re-generate design
 ```
-rm -rf app/*.go && make generate
+make clean-generated && make generate
 ```
