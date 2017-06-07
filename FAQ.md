@@ -1,21 +1,29 @@
 Here are some commonly asked questions.
 
-### I try to login and I see _Username_ not approved.
+### I try to login and I see my username is not approved.
 Click on the `Register Now` link in the landing page, and sign-in using your `@redhat.com` account.
 
+
 ### I am an approved user, but I'm unable to get past the landing page.
+< to be filled in >
 
 
 ### The username in Keycloak is different than what I see on OpenShift.io
 This is a bug which is being fixed in https://github.com/almighty/almighty-core/pull/1367 
 After this PR is merged, re-login to OpenShift.io to be able to see your updated username.
 
+
+
 ### Where are my applications running ?
 Currently, the tenant URL is https://console.starter-us-east-2.openshift.com 
+
+
 
 ### My username on OpenShift.io is different than the name of the project created in my OpenShift online account
 
 This will cause issues with creating your QuickStart projects and pipelines.
+
+
 
 ### I already have a project I had created in my OpenShift Online account.
 
@@ -33,6 +41,8 @@ oc delete all --all -n pkettman-stage
 oc delete all --all -n pkettman-run
 ```
 
+
+
 ### Jenkins is not responding, says "Application is not available" 
 
 "When I goto `https://jenkins-username-jenkins.8a09.starter-us-east-2.openshiftapps.com` I just get Application Not Available"
@@ -46,6 +56,8 @@ Workaround :
 
 This might take upto 5 minutes to take effect.
 
+
+
 ### How do I update my tenant ?
 
 Your own jenkins,che,etc is running in your OpenShift Online account in the https://console.starter-us-east-2.openshift.com cluster. The Deployment Configs have to be updated every few days. To do so, 
@@ -58,6 +70,11 @@ Your own jenkins,che,etc is running in your OpenShift Online account in the http
 
 ### My tenant update does not work
 
+"well the update is fine; it updates the Jenkins DC just fine - but for some reason openshift then decides to ignore that, cancel the deployment so the version 0 keeps running despite version N being more recent. I found I had to manually go into the openshift console and click the Deploy button by hand." - James 
+( need to improve the instructions )
+
+
+
 ### My QuickStart project fails to initialise
 
 This happens when the the Openshift-v3 or Github expires.  
@@ -65,6 +82,8 @@ This happens when the the Openshift-v3 or Github expires.
 * Go to https://sso.openshift.io/auth/realms/fabric8/account/identity
 * Remove and add your Openshift-v3 account.
 * Remove and add your Github account.
+
+
 
 ### I add a new QuickStart project but the build doesn't start on the Pipelines page.
 
@@ -74,6 +93,8 @@ This happens because of a bug in the jenkins-sync plugin which restarts all old 
 * In the Jenkins UI, locate the queue visualisation on the left-hand side of the page. 
 * Click on the red abort button for each build.
 
+
+
 ### Configured service account doesn't have access
 
 `Unauthorized! Configured service account doesn't have access. Service account may have been revoked. Unauthorized`
@@ -81,6 +102,8 @@ This happens because of a bug in the jenkins-sync plugin which restarts all old 
 * Go to https://sso.openshift.io/auth/realms/fabric8/account/identity
 * Remove and add your Openshift-v3 account.
 * Remove and add your Github account.
+
+
 
 ### [[How to test a local change in planner end to end?]]
 
