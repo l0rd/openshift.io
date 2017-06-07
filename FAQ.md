@@ -73,7 +73,7 @@ Your own jenkins,che,etc is running in your OpenShift Online account in the http
 
 "well the update is fine; it updates the Jenkins DC just fine - but for some reason openshift then decides to ignore that, cancel the deployment so the version 0 keeps running despite version N being more recent. I found I had to manually go into the openshift console and click the Deploy button by hand." - James 
 ( need to improve the instructions )
-
+https://github.com/fabric8io/fabric8-init-tenant/issues/74
 
 
 ### My QuickStart project fails to initialise
