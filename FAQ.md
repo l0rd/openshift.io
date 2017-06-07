@@ -4,6 +4,14 @@ Here are some commonly asked questions.
 
 When I goto https://jenkins-<username>-jenkins.8a09.starter-us-east-2.openshiftapps.com I just get Application Not Available. 
 
+### How do I update my tenants ?
+
+### My tenant update does not work even
+
+### My QuickStart project fails to initialize
+
+### I add a new QuickStart project but the build doesn't start on the Pipelines page.
+
 ### [[How to test a local change in planner end to end?]]
 
 
