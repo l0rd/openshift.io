@@ -5,7 +5,9 @@ Currently, the tenant URL is https://console.starter-us-east-2.openshift.com
 
 ### Jenkins is not responding, says "Application is not available" 
 
-When I goto https://jenkins-username-jenkins.8a09.starter-us-east-2.openshiftapps.com I just get Application Not Available. 
+"When I goto `https://jenkins-username-jenkins.8a09.starter-us-east-2.openshiftapps.com` I just get Application Not Available"
+
+This happens when your Jenkins service is struggling to load because of resource issues.
 
 Workaround : 
 * Login to https://console.starter-us-east-2.openshift.com
