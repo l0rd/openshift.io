@@ -22,7 +22,7 @@ Currently, the tenant URL is https://console.starter-us-east-2.openshift.com
 ### My username on OpenShift.io is different than the name of the project created in my OpenShift Online account
 The reason is unknown as of now, however the debugging session was successful in resolving this for `chmouel`
 This will cause issues with creating your QuickStart projects and pipelines.
-<need to fill in details>
+( need to fill in details ) 
 
 
 
@@ -62,7 +62,7 @@ This might take upto 5 minutes to take effect.
 ### How do I update my tenant ?
 
 Your own jenkins,che,etc is running in your OpenShift Online account in the https://console.starter-us-east-2.openshift.com cluster. The Deployment Configs have to be updated every few days. To do so, 
-* Login to OpenShift.io , if you face issues while trying to login, please see < add link>
+* Login to OpenShift.io , if you face issues while trying to login, please see (  add link )
 * Visit your profile by clicking on the top-right corner.
 * Click "Update profile"
 * Scroll down to the bottom of the page and click "Update tenant". This doesn't provide any feedback as of now, but you could check for a `/api/user 200 OK` response in the browser console.
