@@ -19,6 +19,20 @@ This will cause issues with creating your QuickStart projects and pipelines.
 
 ### I already have a project I had created in my OpenShift Online account.
 
+Assuming your old project is `pke-test1` and your OpenShift.io username is `pkettman`, this might cause your pipelines to not show up since there is no `pkettman` namespace.
+
+1. Run the following:
+
+Visit https://console.starter-us-east-2.openshift.com/oauth/token/request to get your `oc` auth token needed for the CLI login.
+```
+oc login https://console.starter-us-east-2.openshift.com  --token=TOKEN
+oc delete project pke-test1
+oc new-project pkettman
+oc delete all --all -n pkettman-test
+oc delete all --all -n pkettman-stage
+oc delete all --all -n pkettman-run
+```
+
 ### Jenkins is not responding, says "Application is not available" 
 
 "When I goto `https://jenkins-username-jenkins.8a09.starter-us-east-2.openshiftapps.com` I just get Application Not Available"
