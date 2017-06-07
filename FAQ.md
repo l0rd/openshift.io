@@ -15,6 +15,7 @@ Workaround :
 This might take upto 5 minutes to take effect.
 
 ### How do I update my tenant ?
+
 Your own jenkins,che,etc is running in your OpenShift Online account in the https://console.starter-us-east-2.openshift.com cluster. The Deployment Configs have to be updated every few days. To do so, 
 * Login to Openshift.io , if you face issues while trying to login, please see < add link>
 * Visit your profile by clicking on the top-right corner.
@@ -27,7 +28,27 @@ Your own jenkins,che,etc is running in your OpenShift Online account in the http
 
 ### My QuickStart project fails to initialise
 
+This happens when the the Openshift-v3 or Github expires.  
+
+* Go to https://sso.openshift.io/auth/realms/fabric8/account/identity
+* Remove and add your Openshift-v3 account.
+* Remove and add your Github account.
+
 ### I add a new QuickStart project but the build doesn't start on the Pipelines page.
+
+This happens because of a bug in the jenkins-sync plugin which restarts all old builds. Since, we have a restriction of only allowing 1 build at a time, the newly created project's build pipeline falls low into the build queue. To fix this, abort all the queued up builds except the one which was created 'just now'.
+
+* On the Pipelines UI, click on the Jenkins URL ( this part needs better instructions )
+* In the Jenkins UI, locate the queue visualisation on the left-hand side of the page. 
+* Click on the red abort button for each build.
+
+### Configured service account doesn't have access
+
+`Unauthorized! Configured service account doesn't have access. Service account may have been revoked. Unauthorized`
+
+* Go to https://sso.openshift.io/auth/realms/fabric8/account/identity
+* Remove and add your Openshift-v3 account.
+* Remove and add your Github account.
 
 ### [[How to test a local change in planner end to end?]]
 
