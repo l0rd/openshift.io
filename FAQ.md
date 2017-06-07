@@ -19,7 +19,7 @@ Currently, the tenant URL is https://console.starter-us-east-2.openshift.com
 
 
 
-### My username on OpenShift.io is different than the name of the project created in my OpenShift online account
+### My username on OpenShift.io is different than the name of the project created in my OpenShift Online account
 The reason is unknown as of now, however the debugging session was successful in resolving this for `chmouel`
 This will cause issues with creating your QuickStart projects and pipelines.
 <need to fill in details>
