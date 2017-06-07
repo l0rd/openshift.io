@@ -4,7 +4,7 @@ Here are some commonly asked questions.
 
 When I goto https://jenkins-<username>-jenkins.8a09.starter-us-east-2.openshiftapps.com I just get Application Not Available. 
 
-### How to test a local change in planner end to end?
+### [How to test a local change in planner end to end?]
 
 1/ Point to local env in fabric8-ui: 
 ```
