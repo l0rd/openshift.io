@@ -1,7 +1,23 @@
 Here are some commonly asked questions.
 
+### I try to login and I see _Username_ not approved.
+Click on the `Register Now` link in the landing page, and sign-in using your `@redhat.com` account.
+
+### I am an approved user, but I'm unable to get past the landing page.
+
+
+### The username in Keycloak is different than what I see on OpenShift.io
+This is a bug which is being fixed in https://github.com/almighty/almighty-core/pull/1367 
+After this PR is merged, re-login to OpenShift.io to be able to see your updated username.
+
 ### Where are my applications running ?
 Currently, the tenant URL is https://console.starter-us-east-2.openshift.com 
+
+### My username on OpenShift.io is different than the name of the project created in my OpenShift online account
+
+This will cause issues with creating your QuickStart projects and pipelines.
+
+### I already have a project I had created in my OpenShift Online account.
 
 ### Jenkins is not responding, says "Application is not available" 
 
@@ -19,7 +35,7 @@ This might take upto 5 minutes to take effect.
 ### How do I update my tenant ?
 
 Your own jenkins,che,etc is running in your OpenShift Online account in the https://console.starter-us-east-2.openshift.com cluster. The Deployment Configs have to be updated every few days. To do so, 
-* Login to Openshift.io , if you face issues while trying to login, please see < add link>
+* Login to OpenShift.io , if you face issues while trying to login, please see < add link>
 * Visit your profile by clicking on the top-right corner.
 * Click "Update profile"
 * Scroll down to the bottom of the page and click "Update tenant". This doesn't provide any feedback as of now, but you could check for a `/api/user 200 OK` response in the browser console.
