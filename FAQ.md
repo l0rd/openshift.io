@@ -103,7 +103,7 @@ If the above doesn't work, use the UI:
 * On the `details` tab, there should a `version=3.x.x`
 
 
-###Which version should my Jenkins be at at ?
+### Which version should my Jenkins be at at ?
 
 To find out the intended, visit http://central.maven.org/maven2/io/fabric8/online/packages/fabric8-online-jenkins/1.0.160/fabric8-online-jenkins-1.0.160-openshift.yml
 and look for the section:
