@@ -119,7 +119,7 @@ This happens because of a bug in the jenkins-sync plugin which restarts all old 
 
 
 
-### My pipeline is started over and over again
+### Whenever my build completes it starts another one
 
 This could have happened if lots of builds were triggered and never got provisioned due to quotas and there's lots of Build resources left over. 
 
