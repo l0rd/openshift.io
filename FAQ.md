@@ -102,14 +102,15 @@ To find out which version of the Jenkins 2 build you are running :
 To find out the intended, visit http://central.maven.org/maven2/io/fabric8/online/packages/fabric8-online-jenkins/1.0.160/fabric8-online-jenkins-1.0.160-openshift.yml
 and look for the section:
 
-Replace **1.0.160** with the value in https://github.com/fabric8io/fabric8-init-tenant/blob/master/TEAM_VERSION
-Note: Assuming that the latest `fabric8-init-tenant` commit is in production.
 
 ```
 provider: fabric8
       project: jenkins-openshift
       version: 3.0.33
 ```
+
+Replace **1.0.160** with the value in https://github.com/fabric8io/fabric8-init-tenant/blob/master/TEAM_VERSION
+Note: Assuming that the latest `fabric8-init-tenant` commit is in production.
 
 ### My tenant update does not work
 
