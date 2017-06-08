@@ -115,7 +115,7 @@ provider: fabric8
       version: 3.0.33
 ```
 
-Replace **1.0.160** with the value in https://github.com/fabric8io/fabric8-init-tenant/blob/master/TEAM_VERSION
+Re-construct the above URL by replacing **1.0.160** with the value in https://github.com/fabric8io/fabric8-init-tenant/blob/master/TEAM_VERSION
 Note: Assuming that the latest `fabric8-init-tenant` commit is in production.
 
 ### My tenant update does not work
