@@ -54,8 +54,28 @@ Workaround :
 * Login to https://console.starter-us-east-2.openshift.com
 * Navigate to https://console.starter-us-east-2.openshift.com/console/project/your-username-jenkins/overview by clicking on the *-jenkins project.
 * Scale the "jenkins" service to 0 pods and then to 1. 
-
 This might take upto 5 minutes to take effect.
+
+
+### My Pipeline build fails with out-of-memory exceptions
+
+``` 
+[Pipeline] End of Pipeline
+java.lang.OutOfMemoryError: Metaspace
+Finished: FAILURE
+```
+
+The solution is same as the one above, if you are using the OpenShift CLI, you could use these command alternatively to restart the Jenkins pod
+
+```
+oc scale dc/jenkins --replicas=0 -n burrsutter-jenkins
+oc scale dc/jenkins --replicas=1 -n burrsutter-jenkins
+```
+
+
+
+https://github.com/openshiftio/openshift.io/issues/206
+
 
 
 
