@@ -102,6 +102,9 @@ If the above doesn't work, use the UI:
 * Open the latest 'active' deployment from the list.
 * On the `details` tab, there should a `version=3.x.x`
 
+
+###Which version should my Jenkins be at at ?
+
 To find out the intended, visit http://central.maven.org/maven2/io/fabric8/online/packages/fabric8-online-jenkins/1.0.160/fabric8-online-jenkins-1.0.160-openshift.yml
 and look for the section:
 
