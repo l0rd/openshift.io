@@ -96,6 +96,8 @@ Your own jenkins,che,etc is running in your OpenShift Online account in the http
 https://github.com/fabric8io/fabric8-init-tenant/issues/74
 
 
+
+
 ### My QuickStart project fails to initialise
 
 This happens when the the Openshift-v3 or Github expires.  
@@ -106,6 +108,7 @@ This happens when the the Openshift-v3 or Github expires.
 
 
 
+
 ### I add a new QuickStart project but the build doesn't start on the Pipelines page.
 
 This happens because of a bug in the jenkins-sync plugin which restarts all old builds. Since, we have a restriction of only allowing 1 build at a time, the newly created project's build pipeline falls low into the build queue. To fix this, abort all the queued up builds except the one which was created 'just now'.
@@ -113,6 +116,15 @@ This happens because of a bug in the jenkins-sync plugin which restarts all old 
 * On the Pipelines UI, click on the Jenkins URL ( this part needs better instructions )
 * In the Jenkins UI, locate the queue visualisation on the left-hand side of the page. 
 * Click on the red abort button for each build.
+
+
+
+### My pipeline is started over and over again
+
+This could have happened if lots of builds were triggered and never got provisioned due to quotas and there's lots of Build resources left over. 
+
+Delete all the build resources by doing a `oc delete build --all`
+
 
 
 
