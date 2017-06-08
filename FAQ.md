@@ -92,8 +92,8 @@ Your own jenkins,che,etc is running in your OpenShift Online account in the http
 
 To confirm you need to be checking which build version of Jenkins/Che you are running, and compare it with the intended version.
 
-To find out which version of the Jenkins 2 build you are running :
-Using the `oc` CLI , try running `oc export dc jenkins -n oc {ID}-jenkins | grep "version:"`
+To find out which version of the Jenkins 2 build you are running,
+use the `oc` CLI , and try running `oc export dc jenkins -n oc {ID}-jenkins | grep "version:"`
 
 If the above doesn't work, use the UI:
 * Login to OpenShift Online https://console.starter-us-east-2.openshift.com
