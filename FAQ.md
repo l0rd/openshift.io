@@ -88,6 +88,28 @@ Your own jenkins,che,etc is running in your OpenShift Online account in the http
 * Scroll down to the bottom of the page and click "Update tenant". This doesn't provide any feedback as of now, but you could check for a `/api/user 200 OK` response in the browser console.
 
 
+### How do I confirm that my tenant is updated ?
+
+To confirm you need to be checking which build version of Jenkins/Che you are running, and compare it with the intended version.
+
+To find out which version of the Jenkins 2 build you are running :
+* Login to OpenShift Online https://console.starter-us-east-2.openshift.com
+* Select project {ID}-jenkins
+* Navigate to ``Applications` -> `Deployments` -> `jenkins`.
+* Open the latest 'active' deployment from the list.
+* On the `details` tab, there should a `version=3.x.x`
+
+To find out the intended, visit http://central.maven.org/maven2/io/fabric8/online/packages/fabric8-online-jenkins/1.0.160/fabric8-online-jenkins-1.0.160-openshift.yml
+and look for the section:
+
+Replace **1.0.160** with the value in https://github.com/fabric8io/fabric8-init-tenant/blob/master/TEAM_VERSION
+Note: Assuming that the latest `fabric8-init-tenant` commit is in production.
+
+```
+provider: fabric8
+      project: jenkins-openshift
+      version: 3.0.33
+```
 
 ### My tenant update does not work
 
@@ -96,6 +118,15 @@ Your own jenkins,che,etc is running in your OpenShift Online account in the http
 https://github.com/fabric8io/fabric8-init-tenant/issues/74
 
 
+### How do I clean-up all apps and builds in my OpenShift online 
+
+```
+oc delete bc --all -n ${ID}
+oc delete build --all -n ${ID}
+oc delete all --all -n ${ID}-test
+oc delete all --all -n ${ID}-stage
+oc delete all --all -n ${ID}-run
+```
 
 
 ### My QuickStart project fails to initialise
