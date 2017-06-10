@@ -79,6 +79,25 @@ https://github.com/openshiftio/openshift.io/issues/206
 
 
 
+### How do I enable or disable integration tests in my pipelines?
+
+You can edit your `Jenkinsfile` to comment out the `mavenIntegrationTest` section on a per app basis.
+
+If you are doing demos you may want to disable integration tests to speed up demos ;) To do that you can globally configure pipelines (once the new Tenant is released) to disable integration tests via updating your `fabric8-pipelines` `ConfigMap`.
+
+Type:
+```
+oc edit cm fabric8-pipelines
+```
+Then add the following to the `data:` section of the `ConfigMap` to disable the `CD` and/or `CI` integration tests
+```yaml
+data:
+  disable-itests-cd: 'true'
+  disable-itests-ci: 'true'
+```
+
+**NOTE** that there is [an issue with RHOAR boosters](https://github.com/openshiftio/booster-common/issues/8) so we've temporarily disabled all integration tests anyway!
+
 ### How do I update my tenant ?
 
 Your own jenkins,che,etc is running in your OpenShift Online account in the https://console.starter-us-east-2.openshift.com cluster. The Deployment Configs have to be updated every few days. To do so, 
