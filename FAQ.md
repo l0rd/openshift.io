@@ -134,17 +134,15 @@ provider: fabric8
       version: 3.0.37
 ```
 
-Re-construct the above URL by replacing **1.0.167** with the value in https://github.com/fabric8io/fabric8-init-tenant/blob/master/TEAM_VERSION
-Note: We are assuming that the latest `fabric8-init-tenant` commit is in production.
-
+Re-construct the above URL by replacing **1.0.167** with the value in the file "TEAM_VERSION" in https://github.com/fabric8io/fabric8-init-tenant/commit/COMMIT_HASH where COMMIT_HASH is the hash in https://github.com/openshiftio/saas/blob/master/dsaas-services/f8-tenant.yaml#L2
 
 
 ### Which version should my Che be at ?
 
 To find out the intended version, visit http://central.maven.org/maven2/io/fabric8/online/packages/fabric8-online-jenkins/1.0.167/fabric8-online-che-1.0.167-openshift.yml and look for the che version inside it.
 
-Re-construct the above URL by replacing **1.0.167** with the value in https://github.com/fabric8io/fabric8-init-tenant/blob/master/TEAM_VERSION
-Note: We are assuming that the latest `fabric8-init-tenant` commit is in production.
+
+Re-construct the above URL by replacing **1.0.167** with the value in the file "TEAM_VERSION" in https://github.com/fabric8io/fabric8-init-tenant/commit/COMMIT_HASH where COMMIT_HASH is the hash in https://github.com/openshiftio/saas/blob/master/dsaas-services/f8-tenant.yaml#L2
 
 
 
