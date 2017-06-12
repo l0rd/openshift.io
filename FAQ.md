@@ -124,23 +124,31 @@ If the above doesn't work, use the UI:
 
 ### Which version should my Jenkins be at at ?
 
-To find out the intended version, visit http://central.maven.org/maven2/io/fabric8/online/packages/fabric8-online-jenkins/1.0.160/fabric8-online-jenkins-1.0.160-openshift.yml
+To find out the intended version, visit http://central.maven.org/maven2/io/fabric8/online/packages/fabric8-online-jenkins/1.0.167/fabric8-online-jenkins-1.0.167-openshift.yml
 and look for the section:
 
 
 ```
 provider: fabric8
       project: jenkins-openshift
-      version: 3.0.33
+      version: 3.0.37
 ```
 
-Re-construct the above URL by replacing **1.0.160** with the value in https://github.com/fabric8io/fabric8-init-tenant/blob/master/TEAM_VERSION
-Note: Assuming that the latest `fabric8-init-tenant` commit is in production.
+Re-construct the above URL by replacing **1.0.167** with the value in https://github.com/fabric8io/fabric8-init-tenant/blob/master/TEAM_VERSION
+Note: We are assuming that the latest `fabric8-init-tenant` commit is in production.
+
+
+
+### Which version should my Che be at ?
+
+To find out the intended version, visit http://central.maven.org/maven2/io/fabric8/online/packages/fabric8-online-jenkins/1.0.167/fabric8-online-che-1.0.167-openshift.yml and look for the che version inside it.
+
+Re-construct the above URL by replacing **1.0.167** with the value in https://github.com/fabric8io/fabric8-init-tenant/blob/master/TEAM_VERSION
+Note: We are assuming that the latest `fabric8-init-tenant` commit is in production.
+
+
 
 ### My tenant update does not work
-
-"well the update is fine; it updates the Jenkins DC just fine - but for some reason openshift then decides to ignore that, cancel the deployment so the version 0 keeps running despite version N being more recent. I found I had to manually go into the openshift console and click the Deploy button by hand." - James 
-( need to improve the instructions )
 https://github.com/fabric8io/fabric8-init-tenant/issues/74
 
 
