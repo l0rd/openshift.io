@@ -98,6 +98,28 @@ data:
 
 **NOTE** that there is [an issue with RHOAR boosters](https://github.com/openshiftio/booster-common/issues/8) so we've temporarily disabled all integration tests anyway!
 
+### My Pipelines are not being properly filtered by my Space?
+
+When you switch between spaces the Pipelines tab should filter by those apps created in the space.
+
+If you created an App a while back (say before June 2017) then the created Pipeline (which is a BuildConfig inside OpenShift) will not have the space label associated so that per space filtering doesn't work.
+
+To work around this from the openshift command line type:
+
+```
+oc edit bc foo
+```
+then ensure that the `metadata.labels` has a value of `space: cheese` like this:
+
+```yaml
+metadata:
+  name: foo
+  labels:
+     space: cheese
+...
+```
+that will then ensure that the `foo` pipeline is filtered to only show on the `cheese` space!
+
 ### How do I update my tenant ?
 
 Your own jenkins,che,etc is running in your OpenShift Online account in the https://console.starter-us-east-2.openshift.com cluster. The Deployment Configs have to be updated every few days. To do so, 
