@@ -172,7 +172,13 @@ Re-construct the above URL by replacing **1.0.167** with the value in the file "
 https://github.com/fabric8io/fabric8-init-tenant/issues/74
 
 
-### How do I clean-up all apps and builds in my OpenShift online 
+### How do I clean-up all apps and builds in my OpenShift Online 
+
+In OpenShift Online, go to the Help question mark (?) in the upper right. 
+ 1. Select "Command Line Tools"
+ 2. Use the copy icon to copy the first command to get your token
+ 3. Paste that into a terminal
+ 4. Use the commands listed below, substituting `${ID}` for your account login ID
 
 ```
 oc delete bc --all -n ${ID}
