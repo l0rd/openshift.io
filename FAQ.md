@@ -26,6 +26,23 @@ This will cause issues with creating your QuickStart projects and pipelines.
 
 
 
+### How do I clean-up all apps and builds in my OpenShift Online 
+
+In OpenShift Online, go to the Help question mark (?) in the upper right. 
+ 1. Select "Command Line Tools"
+ 2. Use the copy icon to copy the first command to get your token
+ 3. Paste that into a terminal
+ 4. Use the commands listed below, substituting `${ID}` for your account login ID
+
+```
+oc delete bc --all -n ${ID}
+oc delete build --all -n ${ID}
+oc delete all --all -n ${ID}-test
+oc delete all --all -n ${ID}-stage
+oc delete all --all -n ${ID}-run
+```
+
+
 ### I already have a project I had created in my OpenShift Online account.
 
 Assuming your old project is `pke-test1` and your OpenShift.io username is `pkettman`, this might cause your pipelines to not show up since there is no `pkettman` namespace.
@@ -172,23 +189,6 @@ Re-construct the above URL by replacing **1.0.167** with the value in the file "
 https://github.com/fabric8io/fabric8-init-tenant/issues/74
 
 
-### How do I clean-up all apps and builds in my OpenShift Online 
-
-In OpenShift Online, go to the Help question mark (?) in the upper right. 
- 1. Select "Command Line Tools"
- 2. Use the copy icon to copy the first command to get your token
- 3. Paste that into a terminal
- 4. Use the commands listed below, substituting `${ID}` for your account login ID
-
-```
-oc delete bc --all -n ${ID}
-oc delete build --all -n ${ID}
-oc delete all --all -n ${ID}-test
-oc delete all --all -n ${ID}-stage
-oc delete all --all -n ${ID}-run
-```
-
-
 ### My QuickStart project fails to initialise
 
 This happens when the the Openshift-v3 or Github expires.  
@@ -196,7 +196,6 @@ This happens when the the Openshift-v3 or Github expires.
 * Go to https://sso.openshift.io/auth/realms/fabric8/account/identity
 * Remove and add your Openshift-v3 account.
 * Remove and add your Github account.
-
 
 
 
