@@ -226,3 +226,34 @@ Delete all the build resources by doing a `oc delete build --all`
 * Remove and add your Openshift-v3 account.
 * Remove and add your Github account.
 
+
+
+### How do I retrieve Che logs
+
+There are at least 3 interesting Che logs you can look at if you are looking for details of Che bahviour:
+
+- che wsmaster (Che-server) logs
+- wsagent logs
+- bayesian (recomendation) language server logs
+
+Here are some commands that should help:
+
+```bash
+ID=<your osio id>
+TOKEN=<your oso token>
+oc login https://api.starter-us-east-2.openshift.com --token=${TOKEN}
+oc project ${ID}-che
+
+# get wsagent logs
+WS_POD_ID=$(oc get pods -o=custom-columns=NAME:.metadata.name --no-headers | grep che-ws)
+oc rsh ${WS_POD_ID} \
+     sh -c "cat /home/user/che/ws-agent/logs/*/*/*/catalina-0.log"
+
+# get bayesian logs
+oc rsh ${WS_POD_ID} \
+     sh -c "cat /projects/bayesian.log" # bayesian.log will move to /home/user/che/ls-bayesian
+
+# get wsmaster logs
+MASTER_POD_ID=$(oc get pods -o=custom-columns=NAME:.metadata.name --no-headers | grep che-[0-9])
+oc logs ${MASTER_POD_ID}
+```
